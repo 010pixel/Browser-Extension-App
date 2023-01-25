@@ -15,9 +15,10 @@ function ItemPage({currentSlug}: any) {
   const action = page ? `install` : version ? `update` : ``;
 
   useEffect(() => {
-    if(version && currentSlug && action) {
+    if(currentSlug && action) {
       window.location.href = `/item/${currentSlug}/${action}?version=${version}`;
     }
+    console.log(version, currentSlug, action)
   }, [version, currentSlug, action]);
 
   return (
