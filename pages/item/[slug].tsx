@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import exntensions from '@/shared/data'
 import { BrowserExtension } from '@/common/interface'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -57,7 +56,14 @@ function ItemPage({slug, item, pageMeta}: any) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+export async function getStaticPaths() {
+  const paths = exntensions.map((ext: BrowserExtension) => ({
+    params: { slug: ext.slug.toString() },
+  }))
+  return { paths, fallback: false }
+}
+
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const { slug } = params as any;
   const item = exntensions.find((e: BrowserExtension) => e.slug === slug) || null;
 

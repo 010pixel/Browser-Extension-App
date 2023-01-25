@@ -4,12 +4,21 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import exntensions from '@/shared/data'
 import { BrowserExtension } from '@/common/interface'
-import { GetServerSideProps } from 'next'
-import { extensionActions, EXTENSION_ACTIONS } from '@/common/constants'
+import { GetStaticProps } from 'next'
+import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
-function ItemPage() {
+function ItemPage({currentSlug}: any) {
+  const { query } = useRouter();
+  const {page, version } = query as any;
+  const action = page ? `install` : version ? `update` : ``;
+
+  useEffect(() => {
+    if(version && currentSlug && action) {
+      window.location.href = `/item/${currentSlug}/${action}/?version=${version}`;
+    }
+  }, [version, currentSlug, action]);
 
   return (
     <>
@@ -20,20 +29,21 @@ function ItemPage() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({params, query}) => {
-  const {page, version } = query as any;
-  const slug = (params as any).currentSlug;
-  const action = page ? `install` : version ? `update` : ``;
+export function getStaticParams() {
+  return ['version', 'page'];
+}
 
-  return {
-    redirect: {
-      destination: `/item/${slug}/${action}/?version=${version}`,
-      permanent: false,
-    },
-  }
+export async function getStaticPaths() {
+  const paths = exntensions.map((ext: BrowserExtension) => ({
+    params: { currentSlug: ext.slug.toString() },
+  }))
+  return { paths, fallback: false }
+}
 
+export const getStaticProps: GetStaticProps = async ({params}) => {
   return {
     props: {
+      currentSlug: (params as any).currentSlug
     }
   }
 }

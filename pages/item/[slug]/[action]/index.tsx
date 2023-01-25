@@ -6,7 +6,7 @@ import styles from '@/styles/Home.module.css'
 import exntensions from '@/shared/data'
 import { BrowserExtension } from '@/common/interface'
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '@/common/constants'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { trackPurchase } from '@/common/utils'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -95,7 +95,20 @@ function ActionPage({slug, action, item, actionName, pageMeta, analyticsEventAct
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+export async function getStaticPaths() {
+  const paths = exntensions.reduce((acc: any[], ext: BrowserExtension) => {
+    const pths = ['install', 'update', 'uninstall'].map((action: string) => {
+      return {params: { slug: ext.slug.toString(),  action: action.toString() }};
+    });
+    return [
+      ...acc,
+      ...pths
+    ]
+  }, [])
+  return { paths, fallback: false }
+}
+
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const { slug, action } = params as any;
   const item = exntensions.find((e: BrowserExtension) => e.slug === slug) || null;
   const actionName = extensionActions[(action as string)?.toUpperCase() as EXTENSION_ACTIONS] || null;
