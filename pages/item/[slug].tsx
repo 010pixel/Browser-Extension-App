@@ -51,7 +51,7 @@ function ItemPage({slug, item, pageMeta}: any) {
         <meta name="description" content={pageMeta.description} />
       </Head>
       <main className={styles.main}>
-        {item ? itemHtml : `404: ${slug} not found`}
+        {item ? itemHtml : `404: ${slug} not found!`}
       </main>
     </>
   )

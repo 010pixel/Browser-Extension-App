@@ -4,9 +4,9 @@ import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   return <>
-    <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+    <Script id="gtm" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
 
-    <Script strategy="lazyOnload">
+    <Script id="gtm-start" strategy="lazyOnload">
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
