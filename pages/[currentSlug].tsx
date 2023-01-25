@@ -16,7 +16,7 @@ function ItemPage({currentSlug}: any) {
 
   useEffect(() => {
     if(version && currentSlug && action) {
-      window.location.href = `/item/${currentSlug}/${action}/?version=${version}`;
+      window.location.href = `/item/${currentSlug}/${action}?version=${version}`;
     }
   }, [version, currentSlug, action]);
 
