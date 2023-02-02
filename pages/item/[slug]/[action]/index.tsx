@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Inter } from '@next/font/google'
@@ -50,17 +51,14 @@ function ActionPage({slug, action, item, actionName, pageMeta, analyticsEventAct
   const itemHtml = <div className="valign-wrapper">
     <div className="container">
       {['google-meet-easy-mute', 'easy-mute-for-google-meet'].includes(item.slug) ? notice : ''}
+      {item?.logo && <div className='center-align'><Image src={item.logo} alt={item.name} width={64} height={64} /></div>}
       <div className="row">
         <div className="col s12">
           <div className={`card ${item.colorBg} z-depth-5`}>
             <div className={`card-content ${item.colorText} center`}>
-              {
-                action === 'install'
-                  ? installMsg
-                  : action === 'update'
-                    ? updateMsg
-                    : uninstallMsg
-              }
+              <h1 style={{fontWeight: 'bold'}}>Thank you</h1>
+              <h5 style={{fontWeight: '300'}}>For downloading <strong><a href={item.links?.[0]?.url} target="_blank" rel="noreferrer">{item.name}</a></strong></h5>
+              <h3>😊</h3>
             </div>
           </div>
         </div>

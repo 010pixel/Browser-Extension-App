@@ -13,4 +13,5 @@ export interface BrowserExtension {
     logo: string;
     banner: string;
     links: ExtensionLink[];
+    showOnHome?: boolean;
 }

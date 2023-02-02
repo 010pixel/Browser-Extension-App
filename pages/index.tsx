@@ -1,10 +1,16 @@
 import Head from 'next/head'
+import Image from 'next/image';
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import exntensions from '@/shared/data';
+import { BrowserExtension, ExtensionLink } from '@/common/interface';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const myExtensions = exntensions;
   return (
     <>
       <Head>
@@ -19,6 +25,26 @@ export default function Home() {
           <h1>Browser-Extensions</h1>
           <hr />
           <h6>Repo for hosting all the browser extension related static pages</h6>
+          <hr />
+          <div>
+            <ul>
+              {
+                myExtensions
+                  .filter((item: BrowserExtension) => {
+                    return item.showOnHome !== false;
+                  }).map((item: BrowserExtension) => {
+                    return <li key={item.id} style={{display: 'flex', alignItems: 'center'}}>
+                      {item?.logo && <Image src={item.logo} alt={item.name} width={16} height={16} style={{marginRight: '8px'}} />}
+                      <Link href={`/item/${encodeURIComponent(item.slug)}`}>{item.name}</Link>
+                      &nbsp;|&nbsp;
+                      {item.links.map((link: ExtensionLink) => {
+                        return <><Link href={link.url} target="_blank" rel="noreferrer">{link.browser}</Link>, </>
+                      })}
+                    </li>
+                  })
+              }
+             </ul>
+          </div>
         </div>
       </main>
     </>
