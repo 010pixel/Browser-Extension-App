@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "npm-run-all -p lint:s*:f*",
+    "prettier:fix": "prettier --write .",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   },
   "dependencies": {
@@ -19,6 +21,7 @@
     "@next/font": "latest",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
+    "clsx": "^1.2.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.6.0",
@@ -39,5 +42,9 @@
     "eslint": "^8.34.0",
     "eslint-config-next": "latest",
     "typescript": "latest"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": "eslint --fix",
+    "src/**/*.scss": "stylelint --fix"
   }
 }

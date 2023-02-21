@@ -1,13 +1,14 @@
-import { PropsWithChildren } from 'react';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import * as React from "react";
+import { PropsWithChildren } from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 export default function Layout({ children }: PropsWithChildren) {
-	return (
-		<>
-			<Header />
-			<main>{children}</main>
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
 }
