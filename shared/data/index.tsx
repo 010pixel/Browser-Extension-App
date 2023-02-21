@@ -1,4 +1,4 @@
-import { BrowserExtension } from "@/common/interface";
+import { BrowserExtension } from "../../common/interface";
 
 const exntensions: BrowserExtension[] = [
     {

@@ -1,54 +1,42 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import exntensions from '@/shared/data'
-import { BrowserExtension } from '@/common/interface'
-import { GetStaticProps } from 'next'
-import { useEffect } from 'react'
-import { trackPageView } from '@/common/utils'
+import * as React from "react";
+import Head from "next/head";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { Avatar, Fade, Grid } from "@mui/material";
+import exntensions from "../../shared/data";
+import { BrowserExtension } from "../../common/interface";
+import { GetStaticProps } from "next";
+import { trackPageView } from "../../common/utils";
 
-const inter = Inter({ subsets: ['latin'] })
+function ItemPage({ slug, item, pageMeta }: any) {
+  const itemHtml = (
+    <Fade in timeout={500}>
+      <Grid container my={5} spacing={0} minHeight={160}>
+        <Grid
+          xs={12}
+          display='flex'
+          flexDirection='column'
+          justifyContent='center'
+          alignItems='center'
+          textAlign='center'
+          item={true}
+        >
+          <Avatar src={item?.logo} sx={{ width: 94, height: 94, mt: 5 }} />
+          <Typography variant='h2' fontWeight={600} color='inherit' my={5}>
+            {item?.name}
+          </Typography>
+          {item?.description && (
+            <Typography variant='h6' fontWeight={400} color='inherit'>
+              {item?.description}
+            </Typography>
+          )}
+        </Grid>
+      </Grid>
+    </Fade>
+  );
 
-function ItemPage({slug, item, pageMeta}: any) {
-
-  const notice = <div className="row">
-    <div className="col s12">
-        <br /><br /><br />
-        <div className="card z-depth-5">
-            <div className="card-content">
-                <div>
-                    <a className="btn-floating pulse red" style={{marginRight: '20px'}}><i className="material-icons">emoji_people</i></a>
-                Hello lovely folks,
-                </div>
-                <br />
-                In the latest update,
-                you must have noticed that your search engine <a className="btn-floating blue-grey"><i className="material-symbols-outlined">search</i></a> is changed.
-                This is to sustatin the development of this extension and continue serving this extension for free
-                {' '}<a className="btn-floating orange accent-4"><i className="material-symbols-outlined">monetization_on</i></a>
-            </div>
-        </div>
-    </div>
-  </div>;
-  const itemHtml = <div className="valign-wrapper">
-    <div className="container">
-      {['google-meet-easy-mute', 'easy-mute-for-google-meet'].includes(item.slug) ? notice : ''}
-      {item?.logo && <div className='center-align'><Image src={item.logo} alt={item.name} width={64} height={64} /></div>}
-      <div className="row">
-        <div className="col s12">
-          <div className={`card ${item.colorBg} z-depth-5`}>
-            <div className={`card-content ${item.colorText} center`}>
-              <h1 style={{fontWeight: 'bold'}}>Thank you</h1>
-              <h5 style={{fontWeight: '300'}}>For downloading <strong><a href={item.links?.[0]?.url} target="_blank" rel="noreferrer">{item.name}</a></strong></h5>
-              <h3>😊</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>;
-
-  useEffect(() => {
+  React.useEffect(() => {
     if (!item) {
       return;
     }
@@ -59,28 +47,41 @@ function ItemPage({slug, item, pageMeta}: any) {
     <>
       <Head>
         <title>{pageMeta.title}</title>
-        <meta name="description" content={pageMeta.description} />
+        <meta name='description' content={pageMeta.description} />
       </Head>
-      <main className={styles.main}>
-        {item ? itemHtml : `404: ${slug} not found!`}
-      </main>
+      <Container maxWidth='lg'>
+        <Box
+          sx={{
+            my: 4,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div data-testid='item-component'>
+            {item ? itemHtml : `404: ${slug} not found!`}
+          </div>
+        </Box>
+      </Container>
     </>
-  )
+  );
 }
 
 export async function getStaticPaths() {
   const paths = exntensions.map((ext: BrowserExtension) => ({
     params: { slug: ext.slug.toString() },
-  }))
-  return { paths, fallback: false }
+  }));
+  return { paths, fallback: false };
 }
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as any;
-  const item = exntensions.find((e: BrowserExtension) => e.slug === slug) || null;
+  const item =
+    exntensions.find((e: BrowserExtension) => e.slug === slug) || null;
 
   const pageMeta: any = {};
-  if(item) {
+  if (item) {
     pageMeta.title = item.name;
     pageMeta.description = item.description;
   } else {
@@ -93,8 +94,8 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
       slug,
       item,
       pageMeta,
-    }
-  }
-}
+    },
+  };
+};
 
 export default ItemPage;
