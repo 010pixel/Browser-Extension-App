@@ -1,50 +1,50 @@
 {
-  "name": "material-next-ts",
-  "version": "5.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "npm-run-all -p lint:s*:f*",
-    "prettier:fix": "prettier --write .",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
-  },
-  "dependencies": {
-    "@emotion/cache": "latest",
-    "@emotion/react": "latest",
-    "@emotion/server": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "^5.11.9",
-    "@mui/material": "latest",
-    "@next/font": "latest",
-    "@typescript-eslint/eslint-plugin": "^5.53.0",
-    "@typescript-eslint/parser": "^5.53.0",
-    "clsx": "^1.2.1",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "next": "latest",
-    "prettier": "^2.8.4",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-ga4": "^2.0.0",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-prettier": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "eslint": "^8.34.0",
-    "eslint-config-next": "latest",
-    "typescript": "latest"
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,tsx}": "eslint --fix",
-    "src/**/*.scss": "stylelint --fix"
-  }
+	"name": "material-next-ts",
+	"version": "5.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"lint:fix": "npm-run-all -p lint:s*:f*",
+		"prettier:fix": "prettier --write .",
+		"post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+	},
+	"dependencies": {
+		"@emotion/cache": "latest",
+		"@emotion/react": "latest",
+		"@emotion/server": "latest",
+		"@emotion/styled": "latest",
+		"@mui/icons-material": "^5.11.9",
+		"@mui/material": "latest",
+		"@next/font": "latest",
+		"@typescript-eslint/eslint-plugin": "^5.53.0",
+		"@typescript-eslint/parser": "^5.53.0",
+		"clsx": "^1.2.1",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-airbnb-typescript": "^17.0.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-prettier": "^4.2.1",
+		"next": "latest",
+		"prettier": "^2.8.4",
+		"react": "latest",
+		"react-dom": "latest",
+		"react-ga4": "^2.0.0",
+		"stylelint": "^14.16.1",
+		"stylelint-config-prettier": "^9.0.5",
+		"stylelint-prettier": "^2.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"eslint": "^8.34.0",
+		"eslint-config-next": "latest",
+		"typescript": "latest"
+	},
+	"lint-staged": {
+		"src/**/*.{js,ts,tsx}": "eslint --fix",
+		"src/**/*.scss": "stylelint --fix"
+	}
 }
