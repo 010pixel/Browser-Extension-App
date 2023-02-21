@@ -5,6 +5,8 @@ import styles from '@/styles/Home.module.css'
 import exntensions from '@/shared/data'
 import { BrowserExtension } from '@/common/interface'
 import { GetStaticProps } from 'next'
+import { useEffect } from 'react'
+import { trackPageView } from '@/common/utils'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,6 +47,14 @@ function ItemPage({slug, item, pageMeta}: any) {
       </div>
     </div>
   </div>;
+
+  useEffect(() => {
+    if (!item) {
+      return;
+    }
+    trackPageView();
+  }, [item]);
+
   return (
     <>
       <Head>
