@@ -10,7 +10,7 @@ import exntensions from '../../../../shared/data';
 import { BrowserExtension } from '../../../../common/interface';
 import { trackPurchase } from '../../../../common/utils';
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
-import { getActionMsg, notice } from './constants';
+import { getActionMsg, notice } from '../../../../src/constants';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
