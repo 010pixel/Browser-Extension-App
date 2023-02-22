@@ -14,7 +14,6 @@ import { getActionMsg, notice } from '../../../../src/constants';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
-	console.log('query', query);
 
 	useEffect(() => {
 		if (item) {
