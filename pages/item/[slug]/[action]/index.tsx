@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import { Card, CardContent } from '@mui/material';
+import { Card, CardContent, Grid, Typography } from '@mui/material';
+import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 import exntensions from '../../../../shared/data';
 import { BrowserExtension } from '../../../../common/interface';
 import { trackPurchase } from '../../../../common/utils';
@@ -65,6 +66,21 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 						{msg}
 					</Box>
 				</div>
+				<Grid sx={{ my: 8 }}>
+					<Typography variant="h4" fontWeight={600} color="inherit" align="center">
+						More for you
+					</Typography>
+					<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
+						<ExtensionGrid
+							extensions={exntensions
+								.filter((ext: BrowserExtension) => {
+									return ext.showOnHome !== false && ext.slug !== item.slug;
+								})
+								.sort(() => 0.5 - Math.random())
+								.slice(0, 3)}
+						/>
+					</Grid>
+				</Grid>
 			</Container>
 		</>
 	);
