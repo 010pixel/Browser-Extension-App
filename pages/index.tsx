@@ -1,10 +1,9 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 import exntensions from '../shared/data';
 import { BrowserExtension, ExtensionLink } from '../common/interface';
 import Link from '../src/Links';
-import { Avatar, Card, CardContent, CardHeader, Grid } from '@mui/material';
+import { Avatar, Card, CardHeader, Grid } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import { browserImageMapping } from '@/common/constants';
 
