@@ -10,6 +10,7 @@ import { broswerNameMapping, browserImageMapping } from '@/common/constants';
 import exntensions from '../../shared/data';
 import { BrowserExtension, ExtensionLink } from '../../common/interface';
 import { trackPageView } from '../../common/utils';
+import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 
 function ItemPage({ item, pageMeta }: any) {
 	const itemHtml = (
@@ -111,6 +112,21 @@ function ItemPage({ item, pageMeta }: any) {
 								</Grid>
 							);
 						})}
+					</Grid>
+					<Grid sx={{ mt: 5 }}>
+						<Typography variant="h4" fontWeight={600} color="inherit" align="center">
+							More for you
+						</Typography>
+						<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
+							<ExtensionGrid
+								extensions={exntensions
+									.filter((ext: BrowserExtension) => {
+										return ext.showOnHome !== false && ext.slug !== item.slug;
+									})
+									.sort(() => 0.5 - Math.random())
+									.slice(0, 3)}
+							/>
+						</Grid>
 					</Grid>
 				</Box>
 			</Container>
