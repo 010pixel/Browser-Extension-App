@@ -1,3 +1,15 @@
+export const browserImageMapping: { [name: string]: string } = {
+	chrome: 'chrome',
+	firefox: 'firefox',
+	edge: 'edge',
+};
+
+export const broswerNameMapping: { [name: string]: string } = {
+	chrome: 'Chrome',
+	firefox: 'Firefox',
+	edge: 'Edge',
+};
+
 export enum EXTENSION_ACTIONS {
 	INSTALL = 'INSTALL',
 	UNINSTALL = 'UNINSTALL',
