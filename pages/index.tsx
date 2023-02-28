@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import { Container, Grid } from '@mui/material';
+import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 import exntensions from '../shared/data';
 import { BrowserExtension } from '../common/interface';
-import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 
 export default function Home() {
 	return (

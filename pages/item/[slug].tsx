@@ -7,10 +7,10 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Avatar, Button, Card, CardContent, Fade, Grid, Link } from '@mui/material';
 import { broswerNameMapping, browserImageMapping } from '@/common/constants';
+import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 import exntensions from '../../shared/data';
 import { BrowserExtension, ExtensionLink } from '../../common/interface';
 import { trackPageView } from '../../common/utils';
-import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 
 function ItemPage({ item, pageMeta }: any) {
 	const itemHtml = (
