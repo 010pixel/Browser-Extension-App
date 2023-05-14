@@ -79,7 +79,7 @@ const exntensions: BrowserExtension[] = [
 		links: [
 			{
 				browser: 'chrome',
-				url: 'https://chrome.google.com/webstore/detail/rexmoji/nbecjgkalhdijjiicijfnnnmdcamdmif',
+				url: 'https://chrome.google.com/webstore/detail/youtube-video-skip-ad-tri/hpnelpabemhjfjgiibgkliipaehnfcjk',
 			},
 			{
 				browser: 'firefox',
