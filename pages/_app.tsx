@@ -24,6 +24,11 @@ export default function MyApp(props: MyAppProps) {
 		<CacheProvider value={emotionCache}>
 			<Head>
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2100928988105413"
+					crossOrigin="anonymous"
+				/>
 			</Head>
 			<ThemeProvider theme={theme}>
 				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
