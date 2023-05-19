@@ -124,7 +124,7 @@ function ItemPage({ item, pageMeta }: any) {
 										return ext.showOnHome !== false && ext.slug !== item.slug;
 									})
 									.sort(() => 0.5 - Math.random())
-									.slice(0, 3)}
+									.slice(0, 6)}
 							/>
 						</Grid>
 					</Grid>
