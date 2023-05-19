@@ -77,7 +77,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 									return ext.showOnHome !== false && ext.slug !== item.slug;
 								})
 								.sort(() => 0.5 - Math.random())
-								.slice(0, 3)}
+								.slice(0, 6)}
 						/>
 					</Grid>
 				</Grid>
