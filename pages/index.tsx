@@ -16,6 +16,10 @@ export default function Home() {
 					justifyContent: 'space-evenly',
 					py: 8,
 					backgroundColor: '#f5f5f5',
+					color: '#000',
+					textShadow: '2px 2px 2px #fafafa',
+					backgroundImage: 'url(/images/home-banner-bg.jpeg)',
+					backgroundSize: 'cover',
 				}}
 			>
 				<Container>
