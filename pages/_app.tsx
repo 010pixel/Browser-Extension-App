@@ -29,6 +29,7 @@ export default function MyApp(props: MyAppProps) {
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2100928988105413"
 					crossOrigin="anonymous"
 				/>
+				<script dangerouslySetInnerHTML={{ __html: `<!-- Bidvertiser2083409 -->` }} />
 			</Head>
 			<ThemeProvider theme={theme}>
 				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
