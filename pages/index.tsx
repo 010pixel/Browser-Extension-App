@@ -34,6 +34,9 @@ export default function Home() {
 			</Grid>
 			<Container>
 				<Grid>
+					<AmazonBanner />
+				</Grid>
+				<Grid>
 					<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, my: 8 }}>
 						<ExtensionGrid
 							extensions={exntensions.filter((item: BrowserExtension) => {
@@ -41,9 +44,6 @@ export default function Home() {
 							})}
 						/>
 					</Grid>
-				</Grid>
-				<Grid>
-					<AmazonBanner />
 				</Grid>
 			</Container>
 		</div>

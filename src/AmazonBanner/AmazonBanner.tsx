@@ -9,6 +9,7 @@ interface AmazonBannerProps {}
 const AmazonBanner: React.FC<AmazonBannerProps> = (props: AmazonBannerProps) => {
 	return (
 		<div
+			style={{ textAlign: 'center', margin: '20px 0' }}
 			dangerouslySetInnerHTML={{
 				__html: `
                     <script type="text/javascript" language="javascript">

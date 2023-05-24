@@ -12,6 +12,7 @@ import { BrowserExtension } from '../../../../common/interface';
 import { trackPurchase } from '../../../../common/utils';
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
 import { getActionMsg, notice } from '../../../../src/constants';
+import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
@@ -66,6 +67,9 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 						{msg}
 					</Box>
 				</div>
+				<Grid>
+					<AmazonBanner />
+				</Grid>
 				<Grid sx={{ my: 8 }}>
 					<Typography variant="h4" fontWeight={600} color="inherit" align="center">
 						More for you
