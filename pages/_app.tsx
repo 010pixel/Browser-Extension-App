@@ -24,11 +24,6 @@ export default function MyApp(props: MyAppProps) {
 		<CacheProvider value={emotionCache}>
 			<Head>
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
-				<script type="text/javascript">
-					var aax_size='728x90'; var aax_pubname = '010pixel-21'; var aax_src='302'; const s =
-					document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src =
-					"https://c.amazon-adsystem.com/aax2/assoc.js"; document.getElementsByTagName('head')[0].appendChild(s);
-				</script>
 			</Head>
 			<ThemeProvider theme={theme}>
 				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
