@@ -1,8 +1,4 @@
 import * as React from 'react';
-import { Avatar, Box, Card, CardHeader, Typography } from '@mui/material';
-import { BrowserExtension, ExtensionLink } from '@/common/interface';
-import { browserImageMapping } from '@/common/constants';
-import Link from '../Links';
 
 interface AmazonBannerProps {}
 
