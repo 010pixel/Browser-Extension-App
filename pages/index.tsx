@@ -4,6 +4,7 @@ import { Container, Grid } from '@mui/material';
 import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 import exntensions from '../shared/data';
 import { BrowserExtension } from '../common/interface';
+import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 
 export default function Home() {
 	return (
@@ -30,7 +31,7 @@ export default function Home() {
 						Make your life fun and easy with these browser extensions
 					</Typography>
 				</Container>
-			</Grid>{' '}
+			</Grid>
 			<Container>
 				<Grid>
 					<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, my: 8 }}>
@@ -42,11 +43,7 @@ export default function Home() {
 					</Grid>
 				</Grid>
 				<Grid>
-					<script type="text/javascript">
-						var aax_size='728x90'; var aax_pubname = '010pixel-21'; var aax_src='302'; const s =
-						document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src =
-						"https://c.amazon-adsystem.com/aax2/assoc.js"; document.getElementsByTagName('head')[0].appendChild(s);
-					</script>
+					<AmazonBanner />
 				</Grid>
 			</Container>
 		</div>
