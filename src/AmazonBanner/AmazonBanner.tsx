@@ -2,7 +2,7 @@ import * as React from 'react';
 
 interface AmazonBannerProps {}
 
-const AmazonBanner: React.FC<AmazonBannerProps> = (props: AmazonBannerProps) => {
+const AmazonBanner: React.FC<AmazonBannerProps> = () => {
 	return (
 		<div
 			style={{ textAlign: 'center', margin: '20px 0' }}
