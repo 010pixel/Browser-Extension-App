@@ -27,7 +27,7 @@ export default function MyApp(props: MyAppProps) {
 				<script type="text/javascript">
 					var aax_size='728x90'; var aax_pubname = '010pixel-21'; var aax_src='302'; const s =
 					document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src =
-					"http://c.amazon-adsystem.com/aax2/assoc.js"; document.getElementsByTagName('head')[0].appendChild(s);
+					"https://c.amazon-adsystem.com/aax2/assoc.js"; document.getElementsByTagName('head')[0].appendChild(s);
 				</script>
 			</Head>
 			<ThemeProvider theme={theme}>
