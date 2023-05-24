@@ -2,9 +2,9 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import { Container, Grid } from '@mui/material';
 import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
+import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 import exntensions from '../shared/data';
 import { BrowserExtension } from '../common/interface';
-import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 
 export default function Home() {
 	return (

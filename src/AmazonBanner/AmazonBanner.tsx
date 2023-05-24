@@ -16,7 +16,7 @@ const AmazonBanner: React.FC<AmazonBannerProps> = () => {
                     <script type="text/javascript" language="javascript" src="https://c.amazon-adsystem.com/aax2/assoc.js"></script>
                 `,
 			}}
-		></div>
+		/>
 	);
 };
 

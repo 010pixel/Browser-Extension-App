@@ -7,12 +7,12 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { Card, CardContent, Grid, Typography } from '@mui/material';
 import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
+import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 import exntensions from '../../../../shared/data';
 import { BrowserExtension } from '../../../../common/interface';
 import { trackPurchase } from '../../../../common/utils';
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
 import { getActionMsg, notice } from '../../../../src/constants';
-import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
