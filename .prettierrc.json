@@ -4,5 +4,8 @@
 	"singleQuote": true,
 	"tabWidth": 2,
 	"trailingComma": "es5",
-	"useTabs": true
+	"useTabs": true,
+	"importOrder": ["^components/(.*)$", "^[@]", "^[./]"],
+	"importOrderSeparation": false,
+	"importOrderSortSpecifiers": false
 }

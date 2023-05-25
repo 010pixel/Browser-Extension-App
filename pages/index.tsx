@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import { Container, Grid } from '@mui/material';
-import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
-import exntensions from '../shared/data';
+import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
+import { Container, Grid } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import { BrowserExtension } from '../common/interface';
+import exntensions from '../shared/data';
 
 export default function Home() {
 	return (

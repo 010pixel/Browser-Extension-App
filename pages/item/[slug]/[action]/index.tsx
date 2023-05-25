@@ -41,7 +41,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 			.sort(() => 0.5 - Math.random())
 			.slice(0, 6);
 		setExtensionToShow(selectedExtensions);
-	}, [extensionToShow, setExtensionToShow]);
+	}, [extensionToShow, setExtensionToShow, item]);
 
 	if (!item) {
 		return `404: ${slug} not found!`;
