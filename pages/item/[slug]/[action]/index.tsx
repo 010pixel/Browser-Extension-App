@@ -1,21 +1,22 @@
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 import { useEffect } from 'react';
-import { GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import { Card, CardContent, Grid, Typography } from '@mui/material';
-import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
 import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
-import exntensions from '../../../../shared/data';
+import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
+import { Card, CardContent, Grid, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
 import { BrowserExtension } from '../../../../common/interface';
 import { trackPurchase } from '../../../../common/utils';
-import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
+import exntensions from '../../../../shared/data';
 import { getActionMsg, notice } from '../../../../src/constants';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
+	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
 
 	useEffect(() => {
 		if (item) {
@@ -28,6 +29,19 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	useEffect(() => {
+		if (extensionToShow.length) {
+			return;
+		}
+		const selectedExtensions = exntensions
+			.filter((ext: BrowserExtension) => {
+				return ext.showOnHome !== false && ext.slug !== item.slug;
+			})
+			.sort(() => 0.5 - Math.random())
+			.slice(0, 6);
+		setExtensionToShow(selectedExtensions);
+	}, [extensionToShow, setExtensionToShow]);
 
 	if (!item) {
 		return `404: ${slug} not found!`;
@@ -75,14 +89,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 						More for you
 					</Typography>
 					<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
-						<ExtensionGrid
-							extensions={exntensions
-								.filter((ext: BrowserExtension) => {
-									return ext.showOnHome !== false && ext.slug !== item.slug;
-								})
-								.sort(() => 0.5 - Math.random())
-								.slice(0, 6)}
-						/>
+						<ExtensionGrid extensions={extensionToShow} />
 					</Grid>
 				</Grid>
 			</Container>
