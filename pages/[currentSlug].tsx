@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { useRouter } from 'next/router';
-import exntensions from '@/shared/data';
-import { BrowserExtension } from '@/common/interface';
 import { GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
+import * as React from 'react';
 import { useEffect } from 'react';
+import { BrowserExtension } from '@/common/interface';
+import exntensions from '@/shared/data';
 
 function ItemPage({ currentSlug }: any) {
 	const { query } = useRouter();

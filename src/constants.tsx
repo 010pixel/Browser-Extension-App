@@ -1,10 +1,10 @@
 import React from 'react';
-import { Divider, Typography } from '@mui/material';
 import EmojiPeople from '@mui/icons-material/EmojiPeople';
-import Search from '@mui/icons-material/Search';
 import MonetizationOn from '@mui/icons-material/MonetizationOn';
-import { BrowserExtension } from '../common/interface';
+import Search from '@mui/icons-material/Search';
+import { Divider, Typography } from '@mui/material';
 import { EXTENSION_ACTIONS } from '../common/constants';
+import { BrowserExtension } from '../common/interface';
 
 export const notice = (
 	<div className="row">
