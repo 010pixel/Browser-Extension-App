@@ -1,6 +1,6 @@
 import * as React from 'react';
-import AmazonBanner from '@/src/AmazonBanner/AmazonBanner';
 import ExtensionGrid from '@/src/ExtensionGrid/ExtensionGrid';
+import AmazonBanner from '@/src/components/AmazonBanner/AmazonBanner';
 import { Container, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { BrowserExtension } from '../common/interface';

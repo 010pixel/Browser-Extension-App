@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { browserImageMapping } from '@/common/constants';
 import { BrowserExtension, ExtensionLink } from '@/common/interface';
+import Link from '@/src/Links';
 import { Avatar, Box, Card, CardHeader, Typography } from '@mui/material';
-import Link from '../Links';
 
 interface ExtensionGridProps {
 	extensions: BrowserExtension[];

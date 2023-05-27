@@ -1,6 +1,6 @@
 import * as React from 'react';
+import Link from '@/src/Links';
 import { AppBar, Toolbar, Typography } from '@mui/material';
-import Link from '../Links';
 
 export default function Header() {
 	return (

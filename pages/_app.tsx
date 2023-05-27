@@ -2,10 +2,10 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import * as React from 'react';
 import ReactGA from 'react-ga4';
+import Layout from '@/src/components/Layout/Layout';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import Layout from '../src/Layout/Layout';
 import createEmotionCache from '../src/createEmotionCache';
 import theme from '../src/theme';
 
