@@ -4,8 +4,9 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { broswerNameMapping, browserImageMapping } from '@/common/constants';
 import AmazonBanner from '@/src/components/AmazonBanner/AmazonBanner';
+import ChangeLog from '@/src/components/ChangeLog/ChangeLog';
 import ExtensionGrid from '@/src/components/ExtensionGrid/ExtensionGrid';
-import { Avatar, Button, Card, CardContent, Fade, Grid, Link } from '@mui/material';
+import { Avatar, Button, Card, CardContent, Fade, Grid, Link, Paper } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -88,63 +89,78 @@ function ItemPage({ item, pageMeta }: any) {
 				</Container>
 			</Box>
 			<Container maxWidth="lg">
-				<Box
-					sx={{
-						my: 5,
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: 'center',
-						alignItems: 'center',
-						gap: 8,
-						py: 3,
-					}}
-				>
-					<Grid>
-						<Typography variant="h4" fontWeight={600} color="inherit" align="center">
-							Download the extension
-						</Typography>
-						<Typography variant="h6" fontWeight={400} color="inherit" align="center">
-							We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to
-							prioritize
-						</Typography>
-					</Grid>
-					<Grid container spacing={2} sx={{ justifyContent: 'space-evenly' }}>
-						{item.links.map((link: ExtensionLink) => {
-							return (
-								<Grid item>
-									<Card sx={{ minWidth: 225, borderRadius: 3 }} raised>
-										<CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, py: 5 }}>
-											<Avatar
-												src={`/images/browsers/${browserImageMapping[link.browser]}.svg`}
-												sx={{ width: 94, height: 94 }}
-											/>
-											<Typography variant="h6" fontWeight={600} color="inherit">
-												Add to {broswerNameMapping[link.browser]}
-											</Typography>
-											<hr style={{ width: '100%', borderTop: '1px dashed #ccc' }} />
-											<Link href={link.url} target="_blank">
-												<Button fullWidth variant="contained" color="primary">
-													Install Extension
-												</Button>
-											</Link>
-										</CardContent>
-									</Card>
-								</Grid>
-							);
-						})}
-					</Grid>
-					<Grid>
-						<AmazonBanner />
-					</Grid>
-					<Grid sx={{ mt: 5 }}>
-						<Typography variant="h4" fontWeight={600} color="inherit" align="center">
-							More for you
-						</Typography>
-						<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
-							<ExtensionGrid extensions={extensionToShow} />
+				<Paper elevation={2} sx={{ my: 5, p: 3 }}>
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: 8,
+							py: 3,
+						}}
+					>
+						<Grid>
+							<Typography variant="h4" fontWeight={600} color="inherit" align="center">
+								Download the extension
+							</Typography>
+							<Typography variant="h6" fontWeight={400} color="inherit" align="center">
+								We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us
+								to prioritize
+							</Typography>
 						</Grid>
-					</Grid>
-				</Box>
+						<Grid container spacing={2} sx={{ justifyContent: 'space-evenly' }}>
+							{item.links.map((link: ExtensionLink) => {
+								return (
+									<Grid item>
+										<Card sx={{ minWidth: 225, borderRadius: 3 }} raised>
+											<CardContent
+												sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, py: 5 }}
+											>
+												<Avatar
+													src={`/images/browsers/${browserImageMapping[link.browser]}.svg`}
+													sx={{ width: 94, height: 94 }}
+												/>
+												<Typography variant="h6" fontWeight={600} color="inherit">
+													Add to {broswerNameMapping[link.browser]}
+												</Typography>
+												<hr style={{ width: '100%', borderTop: '1px dashed #ccc' }} />
+												<Link href={link.url} target="_blank">
+													<Button fullWidth variant="contained" color="primary">
+														Install Extension
+													</Button>
+												</Link>
+											</CardContent>
+										</Card>
+									</Grid>
+								);
+							})}
+						</Grid>
+					</Box>
+				</Paper>
+				<AmazonBanner />
+				<ChangeLog data={item.changelog} />
+				<Paper elevation={2} sx={{ my: 5, p: 3 }}>
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: 8,
+							py: 3,
+						}}
+					>
+						<Grid>
+							<Typography variant="h4" fontWeight={600} color="inherit" align="center">
+								More for you
+							</Typography>
+							<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
+								<ExtensionGrid extensions={extensionToShow} />
+							</Grid>
+						</Grid>
+					</Box>
+				</Paper>
 			</Container>
 		</>
 	);

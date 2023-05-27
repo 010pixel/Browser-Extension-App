@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import AmazonBanner from '@/src/components/AmazonBanner/AmazonBanner';
 import ExtensionGrid from '@/src/components/ExtensionGrid/ExtensionGrid';
-import { Card, CardContent, Grid, Typography } from '@mui/material';
+import { Card, CardContent, Grid, Paper, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
@@ -84,14 +84,27 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 				<Grid>
 					<AmazonBanner />
 				</Grid>
-				<Grid sx={{ my: 8 }}>
-					<Typography variant="h4" fontWeight={600} color="inherit" align="center">
-						More for you
-					</Typography>
-					<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
-						<ExtensionGrid extensions={extensionToShow} />
-					</Grid>
-				</Grid>
+				<Paper elevation={2} sx={{ my: 5, p: 3 }}>
+					<Box
+						sx={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: 8,
+							py: 3,
+						}}
+					>
+						<Grid>
+							<Typography variant="h4" fontWeight={600} color="inherit" align="center">
+								More for you
+							</Typography>
+							<Grid container sx={{ justifyContent: 'space-evenly', gap: 5, mt: 5 }}>
+								<ExtensionGrid extensions={extensionToShow} />
+							</Grid>
+						</Grid>
+					</Box>
+				</Paper>
 			</Container>
 		</>
 	);
