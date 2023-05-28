@@ -1,4 +1,4 @@
-import { BrowserExtension } from '@/common/interface';
+import { BrowserExtension, ChangeLogType } from '@/common/interface';
 
 export const simplyCopyCurrentPageLink: BrowserExtension = {
 	id: 0,
@@ -9,6 +9,18 @@ export const simplyCopyCurrentPageLink: BrowserExtension = {
 	description: '',
 	logo: 'https://lh3.googleusercontent.com/IS1UZeNKgXpBdUWXoh2gqxxhYpnJWvZuVgT4vVdAexc64dsKvs-5Xb407OL-6dfi-YUyuP7pyAVyQhlpEVu6QcBF=w128-h128-e365-rj-sc0x00ffffff',
 	banner: '',
+	changelog: [
+		{
+			version: '1.0.0',
+			date: '2020-04-17',
+			changes: [
+				{
+					type: ChangeLogType.Unspecified,
+					text: 'Initial upload',
+				},
+			],
+		},
+	],
 	links: [
 		{
 			browser: 'chrome',

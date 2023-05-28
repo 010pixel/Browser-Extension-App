@@ -1,4 +1,4 @@
-import { BrowserExtension } from '@/common/interface';
+import { BrowserExtension, ChangeLogType } from '@/common/interface';
 import { indigo } from '@mui/material/colors';
 
 export const easyMuteForGoogleMeet: BrowserExtension = {
@@ -10,6 +10,87 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 	colorBg: indigo[200],
 	logo: 'https://lh3.googleusercontent.com/Flt0qpUDNIvDQtUpdvpgW_XRLy4hqVCKcJ9YdR_ZABimLd4FbGe9-fMRrCPcI5wclKW4306oknbN6I5vopmvMZz4=w128-h128-e365-rj-sc0x00ffffff',
 	banner: '',
+	changelog: [
+		{
+			version: '1.0.0',
+			date: '2020/05/16',
+			changes: [
+				{
+					type: ChangeLogType.Unspecified,
+					text: 'Initial upload',
+				},
+			],
+		},
+		{
+			version: '1.1.0',
+			date: '2020/05/17',
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'User settings to show badge as per their preference. Show all, only muted or only unmuted call total on the badge.',
+				},
+				{ type: ChangeLogType.Added, text: 'Ability to Mute by default when the call loads' },
+			],
+		},
+		{
+			version: '1.2.0',
+			date: '2020/05/21',
+			changes: [{ type: ChangeLogType.Changed, text: 'Updated Icons' }],
+		},
+		{
+			version: '1.3.0',
+			date: '2020/05/31',
+			changes: [{ type: ChangeLogType.Added, text: 'Option to Turn Off Camera by default' }],
+		},
+		{
+			version: '1.4.0',
+			date: '2020/06/10',
+			changes: [
+				{ type: ChangeLogType.Added, text: 'Option to toggle Camera or Microphone by pressing Spacebar' },
+				{ type: ChangeLogType.Added, text: 'Support for multiple languages in the options panel' },
+			],
+		},
+		{
+			version: '1.4.1',
+			date: '2020/08/27',
+			changes: [{ type: ChangeLogType.Fixed, text: 'Issue of extension not being able to load' }],
+		},
+		{
+			version: '1.5.0',
+			date: '2021/03/21',
+			changes: [{ type: ChangeLogType.Added, text: 'mütesync support. https://mutesync.010pixel.com/' }],
+		},
+		{
+			version: '1.5.1',
+			date: '2021/04/10',
+			changes: [{ type: ChangeLogType.Fixed, text: 'Issue of number of calls not updating on badge' }],
+		},
+		{
+			version: '1.5.2',
+			date: '2022/06/01',
+			changes: [
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Issue of extension not being able to load in the newer version of Google Meet',
+				},
+			],
+		},
+		{
+			version: '1.5.3',
+			date: '2022/06/18',
+			changes: [
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Issue of extension not being able to load in the newer version of Google Meet',
+				},
+			],
+		},
+		{
+			version: '1.6.0',
+			date: '2023/01/11',
+			changes: [{ type: ChangeLogType.Added, text: 'Integrate search support' }],
+		},
+	],
 	links: [
 		{
 			browser: 'chrome',
