@@ -1,3 +1,5 @@
+import { EXTENSION_ACTIONS } from './constants';
+
 export interface ExtensionLink {
 	browser: string;
 	url: string;
@@ -24,6 +26,11 @@ export interface ChangeLogItem {
 	changes: ChangeLogChange[];
 }
 
+export interface PageRedirectionObject {
+	type?: 'MAIN' | EXTENSION_ACTIONS;
+	url: string;
+}
+
 export interface BrowserExtension {
 	id: number;
 	slug: string;
@@ -36,4 +43,5 @@ export interface BrowserExtension {
 	links: ExtensionLink[];
 	changelog?: ChangeLogItem[];
 	showOnHome?: boolean;
+	pageRedirection?: PageRedirectionObject[];
 }

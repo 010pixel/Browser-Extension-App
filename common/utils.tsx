@@ -1,4 +1,6 @@
 import ReactGA from 'react-ga4';
+import { EXTENSION_ACTIONS } from './constants';
+import { PageRedirectionObject } from './interface';
 
 export const getBrowserName = () => {
 	const test = (regexp: any) => {
@@ -79,4 +81,18 @@ export function trackPurchase(options: any) {
 			},
 		],
 	});
+}
+
+export function doPageRedirection(
+	pageRedirection: PageRedirectionObject[],
+	currentPageType: 'MAIN' | EXTENSION_ACTIONS
+) {
+	const hasPageRedirection =
+		pageRedirection?.length &&
+		pageRedirection?.find(
+			(pageRedirection: PageRedirectionObject) => !pageRedirection.type || pageRedirection.type === currentPageType
+		);
+	if (hasPageRedirection) {
+		window.location.href = hasPageRedirection.url;
+	}
 }
