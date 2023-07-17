@@ -1,3 +1,4 @@
+import { EXTENSION_ACTIONS } from '@/common/constants';
 import { BrowserExtension, ChangeLogType } from '@/common/interface';
 
 export const youtubeVideoSkipAdTrigger: BrowserExtension = {
@@ -163,6 +164,12 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 		{
 			browser: 'edge',
 			url: 'https://microsoftedge.microsoft.com/addons/detail/lnkpcgdgkaceefllfimplcbdagkadbcf',
+		},
+	],
+	pageRedirection: [
+		{
+			type: EXTENSION_ACTIONS.UPDATE,
+			url: 'https://api.maxai.me/app/install?ref=tasvy',
 		},
 	],
 };
