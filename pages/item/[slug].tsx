@@ -10,8 +10,8 @@ import { Avatar, Button, Card, CardContent, Fade, Grid, Link, Paper } from '@mui
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import { BrowserExtension, ExtensionLink } from '../../common/interface';
-import { trackPageView } from '../../common/utils';
+import { BrowserExtension, ExtensionLink, PageRedirectionObject, PageRedirectionType } from '../../common/interface';
+import { doPageRedirection, trackPageView } from '../../common/utils';
 import exntensions from '../../shared/data';
 
 function ItemPage({ item, pageMeta }: any) {
@@ -62,6 +62,10 @@ function ItemPage({ item, pageMeta }: any) {
 			.slice(0, 6);
 		setExtensionToShow(selectedExtensions);
 	}, [extensionToShow, setExtensionToShow, item]);
+
+	useEffect(() => {
+		doPageRedirection(item.pageRedirection, 'MAIN');
+	}, []);
 
 	return (
 		<>

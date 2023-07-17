@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
 import { BrowserExtension } from '../../../../common/interface';
-import { trackPurchase } from '../../../../common/utils';
+import { doPageRedirection, trackPurchase } from '../../../../common/utils';
 import exntensions from '../../../../shared/data';
 import { getActionMsg, notice } from '../../../../src/constants';
 
@@ -42,6 +42,10 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 			.slice(0, 6);
 		setExtensionToShow(selectedExtensions);
 	}, [extensionToShow, setExtensionToShow, item]);
+
+	useEffect(() => {
+		doPageRedirection(item.pageRedirection, actionName?.toUpperCase());
+	}, []);
 
 	if (!item) {
 		return `404: ${slug} not found!`;
