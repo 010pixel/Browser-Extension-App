@@ -8,7 +8,6 @@ interface ChangeLogProps {
 
 const ChangeLog: React.FC<ChangeLogProps> = (props) => {
 	const { data } = props;
-	console.log(data);
 	return (
 		<Paper elevation={2} sx={{ paddingX: 4, paddingTop: 1, paddingBottom: 2, marginY: 4 }}>
 			<Typography variant="h4" component="h2" fontWeight={600} sx={{ marginY: 2, textDecoration: 'underline' }}>
