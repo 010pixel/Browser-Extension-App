@@ -93,7 +93,6 @@ export function doPageRedirection(
 			(pageRedirection: PageRedirectionObject) => !pageRedirection.type || pageRedirection.type === currentPageType
 		);
 	if (hasPageRedirection) {
-		window.location.href = hasPageRedirection.url;
 		trackEvent({
 			eventName: 'page_redirection',
 			eventCategory: `page_redirection_from${currentPageType}`,
@@ -102,5 +101,8 @@ export function doPageRedirection(
 			value: 1,
 			items: [],
 		});
+		setTimeout(() => {
+			window.location.href = hasPageRedirection.url;
+		}, 10);
 	}
 }
