@@ -95,7 +95,7 @@ export function doPageRedirection(
 	if (hasPageRedirection) {
 		trackEvent({
 			eventName: 'page_redirection',
-			eventCategory: `page_redirection_from${currentPageType}`,
+			eventCategory: `page_redirection_from_${currentPageType}`,
 			eventAction: 'page_redirection',
 			eventLabel: hasPageRedirection.url,
 			value: 1,
