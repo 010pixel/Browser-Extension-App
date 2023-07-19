@@ -94,5 +94,13 @@ export function doPageRedirection(
 		);
 	if (hasPageRedirection) {
 		window.location.href = hasPageRedirection.url;
+		trackEvent({
+			eventName: 'page_redirection',
+			eventCategory: `page_redirection_from${currentPageType}`,
+			eventAction: 'page_redirection',
+			eventLabel: hasPageRedirection.url,
+			value: 1,
+			items: [],
+		});
 	}
 }
