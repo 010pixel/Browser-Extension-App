@@ -17,6 +17,7 @@ import { getActionMsg, notice } from '../../../../src/constants';
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
 	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
+	const pageRedirection = doPageRedirection(item?.pageRedirection, actionName?.toUpperCase());
 
 	useEffect(() => {
 		if (item) {
@@ -44,7 +45,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 	}, [extensionToShow, setExtensionToShow, item]);
 
 	useEffect(() => {
-		doPageRedirection(item.pageRedirection, actionName?.toUpperCase());
+		pageRedirection.doRedirection();
 	}, []);
 
 	if (!item) {

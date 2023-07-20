@@ -92,17 +92,25 @@ export function doPageRedirection(
 		pageRedirection?.find(
 			(pageRedirection: PageRedirectionObject) => !pageRedirection.type || pageRedirection.type === currentPageType
 		);
-	if (hasPageRedirection) {
-		trackEvent({
-			eventName: 'page_redirection',
-			eventCategory: `page_redirection_from_${currentPageType}`,
-			eventAction: 'page_redirection',
-			eventLabel: hasPageRedirection.url,
-			value: 1,
-			items: [],
-		});
-		setTimeout(() => {
-			window.location.href = hasPageRedirection.url;
-		}, 10);
-	}
+	const doRedirection = () => {
+		if (hasPageRedirection) {
+			trackEvent({
+				eventName: 'page_redirection',
+				eventCategory: `page_redirection_from_${currentPageType}`,
+				eventAction: 'page_redirection',
+				eventLabel: hasPageRedirection.url,
+				value: 1,
+				items: [],
+			});
+			setTimeout(() => {
+				window.location.href = hasPageRedirection.url;
+			}, 10);
+		}
+	};
+
+	return {
+		hasPageRedirection: hasPageRedirection ? true : false,
+		doRedirection,
+		redirectionUrl: hasPageRedirection ? hasPageRedirection.url : '',
+	};
 }

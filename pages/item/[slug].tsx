@@ -16,6 +16,7 @@ import exntensions from '../../shared/data';
 
 function ItemPage({ item, pageMeta }: any) {
 	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
+	const pageRedirection = doPageRedirection(item?.pageRedirection, 'MAIN');
 
 	const itemHtml = (
 		<Fade in timeout={500}>
@@ -64,7 +65,7 @@ function ItemPage({ item, pageMeta }: any) {
 	}, [extensionToShow, setExtensionToShow, item]);
 
 	useEffect(() => {
-		doPageRedirection(item.pageRedirection, 'MAIN');
+		pageRedirection.doRedirection();
 	}, []);
 
 	return (
