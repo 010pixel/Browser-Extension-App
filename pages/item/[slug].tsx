@@ -143,7 +143,7 @@ function ItemPage({ item, pageMeta }: any) {
 						</Grid>
 					</Box>
 				</Paper>
-				<AmazonBanner />
+				{!pageRedirection.hasPageRedirection && <AmazonBanner />}
 				<ChangeLog data={item.changelog} />
 				<Paper elevation={2} sx={{ my: 5, p: 3 }}>
 					<Box

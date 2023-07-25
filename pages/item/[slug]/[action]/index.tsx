@@ -86,9 +86,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 						{msg}
 					</Box>
 				</div>
-				<Grid>
-					<AmazonBanner />
-				</Grid>
+				<Grid>{!pageRedirection.hasPageRedirection && <AmazonBanner />}</Grid>
 				<Paper elevation={2} sx={{ my: 5, p: 3 }}>
 					<Box
 						sx={{
