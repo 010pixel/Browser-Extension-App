@@ -102,9 +102,7 @@ export function doPageRedirection(
 				value: 1,
 				items: [],
 			});
-			setTimeout(() => {
-				window.location.href = hasPageRedirection.url;
-			}, 10);
+			window.location.href = hasPageRedirection.url;
 		}
 	};
 
