@@ -85,15 +85,14 @@ export function trackPurchase(options: any) {
 
 export function doPageRedirection(
 	pageRedirection: PageRedirectionObject[],
-	currentPageType: 'MAIN' | EXTENSION_ACTIONS,
-	redirectionKey: string = 'type'
+	currentPageType: 'MAIN' | EXTENSION_ACTIONS
 ) {
 	const hasPageRedirection =
 		pageRedirection?.length &&
 		pageRedirection?.find(
 			(pageRedirection: PageRedirectionObject) => !pageRedirection.type || pageRedirection.type === currentPageType
 		);
-	const doRedirection = () => {
+	const doRedirection = (redirectionKey: string = 'type') => {
 		if (hasPageRedirection) {
 			trackEvent({
 				eventName: 'page_redirection',

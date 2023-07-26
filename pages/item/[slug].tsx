@@ -16,11 +16,7 @@ import exntensions from '../../shared/data';
 
 function ItemPage({ item, pageMeta }: any) {
 	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
-	const pageRedirection = doPageRedirection(
-		item?.pageRedirection,
-		'MAIN',
-		`${item?.slug?.toUpperCase()}_MAIN_REDIRECTION`
-	);
+	const pageRedirection = doPageRedirection(item?.pageRedirection, 'MAIN');
 
 	const itemHtml = (
 		<Fade in timeout={500}>
@@ -69,7 +65,7 @@ function ItemPage({ item, pageMeta }: any) {
 	}, [extensionToShow, setExtensionToShow, item]);
 
 	useEffect(() => {
-		pageRedirection.doRedirection();
+		pageRedirection.doRedirection(`${item?.slug?.toUpperCase()}_MAIN_REDIRECTION`);
 	}, []);
 
 	return (

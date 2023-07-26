@@ -17,11 +17,7 @@ import { getActionMsg, notice } from '../../../../src/constants';
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
 	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
-	const pageRedirection = doPageRedirection(
-		item?.pageRedirection,
-		actionName?.toUpperCase(),
-		`${slug?.toUpperCase()}_${actionName?.toUpperCase()}_${query.version || '1'}_REDIRECTION`
-	);
+	const pageRedirection = doPageRedirection(item?.pageRedirection, actionName?.toUpperCase());
 
 	useEffect(() => {
 		if (item) {
@@ -49,8 +45,12 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 	}, [extensionToShow, setExtensionToShow, item]);
 
 	useEffect(() => {
-		pageRedirection.doRedirection();
-	}, []);
+		if (query.version) {
+			pageRedirection.doRedirection(
+				`${slug?.toUpperCase()}_${actionName?.toUpperCase()}_${query.version || '1'}_REDIRECTION`
+			);
+		}
+	}, [query.version]);
 
 	if (!item) {
 		return `404: ${slug} not found!`;
