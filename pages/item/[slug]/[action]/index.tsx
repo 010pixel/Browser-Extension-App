@@ -17,7 +17,11 @@ import { getActionMsg, notice } from '../../../../src/constants';
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
 	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
-	const pageRedirection = doPageRedirection(item?.pageRedirection, actionName?.toUpperCase());
+	const pageRedirection = doPageRedirection(
+		item?.pageRedirection,
+		actionName?.toUpperCase(),
+		`${slug?.toUpperCase()}_${actionName?.toUpperCase()}_${query.version || '1'}_REDIRECTION`
+	);
 
 	useEffect(() => {
 		if (item) {

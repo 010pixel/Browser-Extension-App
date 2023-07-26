@@ -16,7 +16,11 @@ import exntensions from '../../shared/data';
 
 function ItemPage({ item, pageMeta }: any) {
 	const [extensionToShow, setExtensionToShow] = React.useState<BrowserExtension[]>([]);
-	const pageRedirection = doPageRedirection(item?.pageRedirection, 'MAIN');
+	const pageRedirection = doPageRedirection(
+		item?.pageRedirection,
+		'MAIN',
+		`${item?.slug?.toUpperCase()}_MAIN_REDIRECTION`
+	);
 
 	const itemHtml = (
 		<Fade in timeout={500}>

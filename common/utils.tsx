@@ -85,7 +85,8 @@ export function trackPurchase(options: any) {
 
 export function doPageRedirection(
 	pageRedirection: PageRedirectionObject[],
-	currentPageType: 'MAIN' | EXTENSION_ACTIONS
+	currentPageType: 'MAIN' | EXTENSION_ACTIONS,
+	redirectionKey: string = 'type'
 ) {
 	const hasPageRedirection =
 		pageRedirection?.length &&
@@ -102,7 +103,12 @@ export function doPageRedirection(
 				value: 1,
 				items: [],
 			});
+			const hasRedirected = localStorage.getItem('page_redirected');
+			if (hasRedirected === redirectionKey) {
+				return;
+			}
 			window.location.href = hasPageRedirection.url;
+			localStorage.setItem('page_redirected', redirectionKey);
 		}
 	};
 
