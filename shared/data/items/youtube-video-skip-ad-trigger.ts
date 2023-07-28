@@ -168,6 +168,10 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 	],
 	pageRedirection: [
 		{
+			type: EXTENSION_ACTIONS.INSTALL,
+			url: 'https://api.maxai.me/app/install?ref=tasvy',
+		},
+		{
 			type: EXTENSION_ACTIONS.UPDATE,
 			url: 'https://api.maxai.me/app/install?ref=tasvy',
 		},
