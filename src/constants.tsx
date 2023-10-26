@@ -1,32 +1,114 @@
 import React from 'react';
-import EmojiPeople from '@mui/icons-material/EmojiPeople';
-import MonetizationOn from '@mui/icons-material/MonetizationOn';
-import Search from '@mui/icons-material/Search';
-import { Divider, Typography } from '@mui/material';
+import { Avatar, Box, Paper, Typography } from '@mui/material';
 import { EXTENSION_ACTIONS } from '../common/constants';
 import { BrowserExtension } from '../common/interface';
 
-export const notice = (
-	<div className="row">
-		<div className="col s12">
-			<div className="card z-depth-5">
-				<div className="card-content">
-					<div>
-						<EmojiPeople color="primary" />
-						Hello lovely folks,
-					</div>
-					<Divider
+export const noticeEasyMuteForGoogleMeet = (
+	<Box
+		sx={{
+			// maxWidth: 800,
+			width: '100%',
+			mx: 'auto',
+			my: 3,
+		}}
+	>
+		<Paper
+			elevation={3}
+			sx={{
+				p: 5,
+				display: 'flex',
+				flexDirection: 'column',
+				gap: 1.5,
+			}}
+			component="div"
+		>
+			<Box
+				sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 2 }}
+			>
+				<Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 1, mb: 3 }}>
+					<Box
 						sx={{
-							marginY: 2,
+							display: 'flex',
+							p: 0.5,
+							fontSize: 40,
+						}}
+					>
+						📝
+					</Box>
+					<Typography variant="h4" fontWeight={700}>
+						Note from me, the developer
+					</Typography>
+				</Box>
+				<Paper
+					elevation={5}
+					sx={{
+						width: 150,
+						height: 150,
+						borderRadius: '50%',
+						border: '2px solid',
+						borderColor: 'white',
+					}}
+				>
+					<Avatar
+						src="/images/me.jpg"
+						sx={{
+							width: '100%',
+							height: '100%',
 						}}
 					/>
-					In the latest update, you must have noticed that your search engine <Search color="primary" />
-					is changed. This is to sustatin the development of this extension and continue serving this extension for free{' '}
-					<MonetizationOn color="warning" />
-				</div>
-			</div>
-		</div>
-	</div>
+				</Paper>
+			</Box>
+			<Typography component="div" gutterBottom>
+				👋 Hello Amazing Folks,
+			</Typography>
+			<Typography component="div">
+				I have been building 👨‍💻 and maintaining free software 🛠️ for over a decade 🗓️ now.
+			</Typography>
+			<Typography component="div">
+				🙏 Thanks to all of you for using them and continuing to encourage 🥳 me with your good review comments 🎤. Your
+				support has kept me motivated to build better features to solve your problems 👏.
+			</Typography>
+			<Typography component="div">
+				I would <b>love to keep building and giving my extensions for free</b> to all of you. However, a month ago, I
+				have{' '}
+				<Typography
+					component="span"
+					sx={{
+						fontWeight: 700,
+						fontSize: 28,
+						color: 'primary.main',
+					}}
+				>
+					Lost my Job
+				</Typography>
+				, so I need to find ways to continue support myself. I <b>need your support</b> in this situation to help me
+				continue keep building and improving my extensions and continue to server all of you 🤝.
+			</Typography>
+			<Typography component="div">
+				To make sure all of you{' '}
+				<Typography component="span" color="warning" fontWeight={600}>
+					don’t have sudden interruption
+				</Typography>
+				, I will{' '}
+				<Typography component="span" color="warning" fontWeight={600}>
+					continue
+				</Typography>{' '}
+				to keep the basic features for free and charge for the premium features. I wish many of you will buy the Premium
+				subscriptions and{' '}
+				<Typography component="span" color="warning" fontWeight={600} fontStyle="italic">
+					help me to pass through this situation
+				</Typography>{' '}
+				🙏 .
+			</Typography>
+			<Typography component="div" fontWeight={700}>
+				Thank you For Supporting,
+				<Typography fontWeight={500}>010Pixel</Typography>
+			</Typography>
+			<Typography component="div" variant="h3">
+				😊
+			</Typography>
+		</Paper>
+	</Box>
 );
 
 export const installMsg = (item: BrowserExtension) => (

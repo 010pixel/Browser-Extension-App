@@ -3,16 +3,17 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import { useEffect } from 'react';
+import notices from '@/shared/data/notices';
 import AmazonBanner from '@/src/components/AmazonBanner/AmazonBanner';
 import ExtensionGrid from '@/src/components/ExtensionGrid/ExtensionGrid';
-import { Card, CardContent, Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../../common/constants';
 import { BrowserExtension } from '../../../../common/interface';
 import { doPageRedirection, trackPurchase } from '../../../../common/utils';
 import exntensions from '../../../../shared/data';
-import { getActionMsg, notice } from '../../../../src/constants';
+import { getActionMsg, noticeEasyMuteForGoogleMeet } from '../../../../src/constants';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
@@ -70,11 +71,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 			</Head>
 			<Container maxWidth="lg">
 				<div data-testid="action-component">
-					{['google-meet-easy-mute', 'easy-mute-for-google-meet'].includes(item.slug) && (
-						<Card sx={{ maxWidth: 345, backgroundColor: 'beige' }} style={{ margin: '20px auto' }}>
-							<CardContent>{notice}</CardContent>
-						</Card>
-					)}
+					{notices[item.slug] && notices[item.slug]}
 					<Box
 						marginX={5}
 						marginY={5}
