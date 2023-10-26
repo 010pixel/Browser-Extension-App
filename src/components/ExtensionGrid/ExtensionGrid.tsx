@@ -12,8 +12,9 @@ const ExtensionGrid: React.FC<ExtensionGridProps> = (props: ExtensionGridProps) 
 	return (
 		<>
 			{props.extensions.map((item: BrowserExtension) => {
+				const key = `${item.slug}_${Math.random()}`;
 				return (
-					<Link href={`/item/${encodeURIComponent(item.slug)}`} sx={{ textDecoration: 'none' }}>
+					<Link key={key} href={`/item/${encodeURIComponent(item.slug)}`} sx={{ textDecoration: 'none' }}>
 						<Card sx={{ width: 280, borderRadius: 3 }}>
 							<CardHeader
 								avatar={<Avatar src={item?.logo} sx={{ width: 64, height: 64 }} />}
