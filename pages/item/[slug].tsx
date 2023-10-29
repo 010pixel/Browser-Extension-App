@@ -66,6 +66,7 @@ function ItemPage({ item, pageMeta }: any) {
 
 	useEffect(() => {
 		pageRedirection.doRedirection(`${item?.slug?.toUpperCase()}_MAIN_REDIRECTION`);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

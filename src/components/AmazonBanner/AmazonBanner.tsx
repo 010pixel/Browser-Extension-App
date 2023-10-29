@@ -1,9 +1,14 @@
+import { Box } from '@mui/material';
 import * as React from 'react';
 
 interface AmazonBannerProps {}
 
 const AmazonBanner: React.FC<AmazonBannerProps> = () => {
 	return (
+		<Box sx={{
+			width: '100%',
+			overflow:'scroll'
+		}}>
 		<div
 			style={{ textAlign: 'center', margin: '20px 0' }}
 			dangerouslySetInnerHTML={{
@@ -17,6 +22,7 @@ const AmazonBanner: React.FC<AmazonBannerProps> = () => {
                 `,
 			}}
 		/>
+		</Box>
 	);
 };
 

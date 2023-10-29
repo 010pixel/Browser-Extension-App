@@ -13,7 +13,7 @@ import { extensionActions, EXTENSION_ACTIONS, GAEventsByAction } from '../../../
 import { BrowserExtension } from '../../../../common/interface';
 import { doPageRedirection, trackPurchase } from '../../../../common/utils';
 import exntensions from '../../../../shared/data';
-import { getActionMsg, noticeEasyMuteForGoogleMeet } from '../../../../src/constants';
+import { getActionMsg } from '../../../../src/constants';
 
 function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventActions }: any) {
 	const { query } = useRouter();
@@ -51,7 +51,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 				`${slug?.toUpperCase()}_${actionName?.toUpperCase()}_${query.version || '1'}_REDIRECTION`
 			);
 		}
-	}, [query.version]);
+	}, [query.version, pageRedirection, slug, actionName]);
 
 	if (!item) {
 		return `404: ${slug} not found!`;
