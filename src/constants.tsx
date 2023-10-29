@@ -23,7 +23,16 @@ export const noticeEasyMuteForGoogleMeet = (
 			component="div"
 		>
 			<Box
-				sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 2 }}
+				sx={{
+					display: 'flex',
+					flexDirection: {
+						xs: 'column-reverse',
+						sm: 'row',
+					},
+					alignItems: 'center',
+					justifyContent: 'space-between',
+					gap: 2,
+				}}
 			>
 				<Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 1, mb: 3 }}>
 					<Box
