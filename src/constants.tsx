@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, Box, Paper, Typography } from '@mui/material';
 import { EXTENSION_ACTIONS } from '../common/constants';
 import { BrowserExtension } from '../common/interface';
+import ChangeLog from './components/ChangeLog/ChangeLog';
 
 export const noticeEasyMuteForGoogleMeet = (
 	<Box
@@ -132,17 +133,39 @@ export const installMsg = (item: BrowserExtension) => (
 	</>
 );
 
-export const updateMsg = (item: BrowserExtension, version: string) => (
-	<>
-		<Typography variant="h2" fontWeight={700}>
-			Thank you
-		</Typography>
-		<Typography variant="h5" fontWeight={300} marginY={2}>
-			<strong>{item.name}</strong> has been updated to {version ? `v${version}` : 'latest version'}
-		</Typography>
-		<Typography variant="h3">😊</Typography>
-	</>
-);
+export const updateMsg = (item: BrowserExtension, version: string) => {
+	const changelogData = (item.changelog || [])?.filter((cgItem) => cgItem.version === version);
+	return (
+		<>
+			<Typography variant="h2" fontWeight={700}>
+				Thank you
+			</Typography>
+			<Typography variant="h5" fontWeight={300} marginY={2}>
+				<strong>{item.name}</strong> has been updated to{' '}
+			</Typography>
+			<Typography variant="h4" fontWeight={600}>
+				{version ? `v${version}` : 'latest version'}
+			</Typography>
+			{changelogData.length > 0 && (
+				<Box
+					sx={{
+						maxWidth: 700,
+						px: 1,
+						mx: 'auto',
+						'.MuiTypography-overline, .MuiTypography-subtitle1, ul': { textAlign: 'left' },
+						'.MuiTypography-overline, .MuiTypography-subtitle1': { fontSize: '1rem' },
+						'ul li': {
+							fontSize: '0.9rem',
+						},
+					}}
+				>
+					<ChangeLog data={changelogData} title="What's New" />
+				</Box>
+			)}
+			<Typography variant="h3">😊</Typography>
+		</>
+	);
+};
 export const uninstallMsg = () => (
 	<>
 		<Typography variant="h2" fontWeight={700}>

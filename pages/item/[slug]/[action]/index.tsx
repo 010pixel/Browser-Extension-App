@@ -71,7 +71,6 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 			</Head>
 			<Container maxWidth="lg">
 				<div data-testid="action-component">
-					{notices[item.slug] && notices[item.slug]}
 					<Box
 						marginX={5}
 						marginY={5}
@@ -86,6 +85,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 					>
 						{msg}
 					</Box>
+					{notices[item.slug] && notices[item.slug]}
 				</div>
 				<Grid>{!pageRedirection.hasPageRedirection && <AmazonBanner />}</Grid>
 				<Paper elevation={2} sx={{ my: 5, p: 3 }}>

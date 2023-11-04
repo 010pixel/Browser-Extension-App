@@ -4,14 +4,15 @@ import { Paper, Typography } from '@mui/material';
 
 interface ChangeLogProps {
 	data: ChangeLogItem[];
+	title?: string;
 }
 
 const ChangeLog: React.FC<ChangeLogProps> = (props) => {
-	const { data } = props;
+	const { data, title } = props;
 	return (
 		<Paper elevation={2} sx={{ paddingX: 4, paddingTop: 1, paddingBottom: 2, marginY: 4 }}>
 			<Typography variant="h4" component="h2" fontWeight={600} sx={{ marginY: 2, textDecoration: 'underline' }}>
-				Changelog
+				{title || 'Changelog'}
 			</Typography>
 			{data?.length ? (
 				data.map((item) => {
@@ -28,7 +29,7 @@ const ChangeLog: React.FC<ChangeLogProps> = (props) => {
 						[ChangeLogType.Security]: changes.filter((change) => change.type === ChangeLogType.Security),
 					};
 					return (
-						<div>
+						<div key={item.version}>
 							<Typography variant="subtitle1" component="h2" fontWeight={600}>
 								v{version} <small>({date})</small>
 							</Typography>
@@ -41,13 +42,17 @@ const ChangeLog: React.FC<ChangeLogProps> = (props) => {
 										}
 										const changesText = changesForType.map((change) => {
 											return (
-												<Typography variant="body2" component="li">
+												<Typography
+													variant="body2"
+													component="li"
+													key={`${item.version}${change.text.substring(0, 10)}`}
+												>
 													{change.text}
 												</Typography>
 											);
 										});
 										return (
-											<div>
+											<div key={`${item.version}${changeType}`}>
 												{changeType && changeType !== ChangeLogType.Unspecified && (
 													<Typography
 														variant="overline"
