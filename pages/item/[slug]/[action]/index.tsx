@@ -72,7 +72,6 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 			<Container maxWidth="lg">
 				<div data-testid="action-component">
 					<Box
-						marginX={5}
 						marginY={5}
 						sx={{
 							backgroundColor: 'primary.dark' || item.colorBg,
@@ -81,6 +80,10 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 							paddingY: 6,
 							borderRadius: 2,
 							boxShadow: 10,
+							mx: {
+								xs: 1,
+								sm: 5,
+							},
 						}}
 					>
 						{msg}
