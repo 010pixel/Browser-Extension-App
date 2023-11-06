@@ -44,4 +44,5 @@ export interface BrowserExtension {
 	changelog?: ChangeLogItem[];
 	showOnHome?: boolean;
 	pageRedirection?: PageRedirectionObject[];
+	feedbackForm?: string;
 }

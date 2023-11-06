@@ -152,6 +152,8 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			],
 		},
 	],
+	feedbackForm:
+		'https://docs.google.com/forms/d/e/1FAIpQLSfjOjf0mp41O5FIMdo2gKKEp7yKHoHd_FWYhw5RnoAvjEGvfA/viewform?embedded=true',
 	links: [
 		{
 			browser: 'chrome',

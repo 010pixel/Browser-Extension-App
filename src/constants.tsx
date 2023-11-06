@@ -166,7 +166,7 @@ export const updateMsg = (item: BrowserExtension, version: string) => {
 		</>
 	);
 };
-export const uninstallMsg = () => (
+export const uninstallMsg = (item: BrowserExtension) => (
 	<>
 		<Typography variant="h2" fontWeight={700}>
 			So sad
@@ -174,6 +174,11 @@ export const uninstallMsg = () => (
 		<Typography variant="h5" fontWeight={300} marginY={2}>
 			to see you go
 		</Typography>
+		{item.feedbackForm && (
+			<iframe title="feedback-form" src={item.feedbackForm} width="640" height="923">
+				Loading…
+			</iframe>
+		)}
 		<Typography variant="h3">😢</Typography>
 	</>
 );
@@ -185,5 +190,5 @@ export const getActionMsg = (action: string, item: BrowserExtension, version: st
 	if (action === EXTENSION_ACTIONS.UPDATE) {
 		return updateMsg(item, version as string);
 	}
-	return uninstallMsg();
+	return uninstallMsg(item);
 };
