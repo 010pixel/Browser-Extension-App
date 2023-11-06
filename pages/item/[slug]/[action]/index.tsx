@@ -84,6 +84,7 @@ function ActionPage({ slug, action, item, actionName, pageMeta, analyticsEventAc
 								xs: 1,
 								sm: 5,
 							},
+							overflowX: 'auto',
 						}}
 					>
 						{msg}
