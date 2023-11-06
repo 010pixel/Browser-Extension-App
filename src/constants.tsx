@@ -168,11 +168,11 @@ export const updateMsg = (item: BrowserExtension, version: string) => {
 };
 export const uninstallMsg = (item: BrowserExtension) => (
 	<>
-		<Typography variant="h2" fontWeight={700}>
-			So sad
+		<Typography variant="h4" fontWeight={400}>
+			So sad 😢 to see you go
 		</Typography>
-		<Typography variant="h5" fontWeight={300} marginY={2}>
-			to see you go
+		<Typography variant="h3" fontWeight={600} marginY={2}>
+			✨ How can I do better?
 		</Typography>
 		{item.feedbackForm && (
 			<iframe title="feedback-form" src={item.feedbackForm} width="640" height="923">
