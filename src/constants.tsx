@@ -175,9 +175,20 @@ export const uninstallMsg = (item: BrowserExtension) => (
 			✨ How can I do better?
 		</Typography>
 		{item.feedbackForm && (
-			<iframe title="feedback-form" src={item.feedbackForm} width="640" height="923">
-				Loading…
-			</iframe>
+			<Box
+				sx={{
+					background: '#fff',
+					display: 'inline-block',
+					borderRadius: 2,
+					pt: 3,
+					overflowX: 'auto',
+					maxWidth: '100%',
+				}}
+			>
+				<iframe title="feedback-form" src={item.feedbackForm} width="640" height="923" frameBorder={0}>
+					Loading…
+				</iframe>
+			</Box>
 		)}
 		<Typography variant="h3">😢</Typography>
 	</>
