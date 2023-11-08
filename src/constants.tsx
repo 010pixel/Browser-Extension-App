@@ -172,7 +172,7 @@ export const uninstallMsg = (item: BrowserExtension) => (
 			So sad 😢 to see you go
 		</Typography>
 		<Typography variant="h3" fontWeight={600} marginY={2}>
-			✨ How can I do better?
+			✨ How can we do better?
 		</Typography>
 		{item.feedbackForm && (
 			<Box
