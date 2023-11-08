@@ -105,4 +105,6 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			url: 'https://microsoftedge.microsoft.com/addons/detail/easy-mute-for-google-meet/bnielpmobbfkagafnomghedppdlhobpb',
 		},
 	],
+	feedbackForm:
+		'https://docs.google.com/forms/d/e/1FAIpQLSdOiGCJpMWFEMKxrb69CdgRAs8gFHT9SJzMuiiyRF_k5rVKTA/viewform?embedded=true',
 };
