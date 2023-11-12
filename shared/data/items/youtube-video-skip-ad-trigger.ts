@@ -151,6 +151,68 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 				},
 			],
 		},
+		{
+			version: '2.3.0',
+			date: '2023/07/18',
+			changes: [
+				{ type: ChangeLogType.Added, text: 'Option to Skip Ad After 60 seconds' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Support for Internationalization support with English, Chinese (China), French, Hindi, Indonesian, Italian, Japanese, Portuguese (Portugal), Spanish, Vietnamese',
+				},
+				{ type: ChangeLogType.Fixed, text: 'Issue of extension not working with latest Skip Ads button' },
+				{ type: ChangeLogType.Fixed, text: 'Issue of extension manager showing error click of undefined' },
+			],
+		},
+		{
+			version: '2.3.1',
+			date: '2023/10/26',
+			changes: [
+				{ type: ChangeLogType.Added, text: 'Open update only once when the browser is updated for the first time' },
+			],
+		},
+		{
+			version: '2.3.2',
+			date: '2023/10/29',
+			changes: [{ type: ChangeLogType.Added, text: 'Improved page open experience' }],
+		},
+		{
+			version: '2.4.0',
+			date: '2023/10/30',
+			changes: [{ type: ChangeLogType.Added, text: 'Paid Subscription' }],
+		},
+		{
+			version: '2.4.1',
+			date: '2023/11/03',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Better Design Experience, Removed Tabs and showing both Settings and Subscriptions on the same page',
+				},
+				{ type: ChangeLogType.Added, text: 'Profile Dropdown for logged-in users' },
+				{ type: ChangeLogType.Fixed, text: 'Bug of Settings Form not showing the saved value' },
+			],
+		},
+		{
+			version: '2.4.2',
+			date: '2023/11/04',
+			changes: [
+				{ type: ChangeLogType.Added, text: 'Support for Opt-out from Analytics' },
+				{ type: ChangeLogType.Changed, text: 'Improved design for Subscription' },
+				{ type: ChangeLogType.Changed, text: 'Performance improvements' },
+			],
+		},
+		{
+			version: '2.4.3',
+			date: '2023/11/13',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Improved experience of showing Premium Only. Show Premium features on clicking the premium option',
+				},
+				{ type: ChangeLogType.Changed, text: 'Removed premium features box from the bottom of settings box' },
+			],
+		},
 	],
 	feedbackForm:
 		'https://docs.google.com/forms/d/e/1FAIpQLSfjOjf0mp41O5FIMdo2gKKEp7yKHoHd_FWYhw5RnoAvjEGvfA/viewform?embedded=true',
