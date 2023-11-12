@@ -90,6 +90,48 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			date: '2023/01/11',
 			changes: [{ type: ChangeLogType.Added, text: 'Integrate search support' }],
 		},
+		{
+			version: '1.6.1',
+			date: '2023/01/20',
+			changes: [{ type: ChangeLogType.Changed, text: 'Search' }],
+		},
+		{
+			version: '1.7.0',
+			date: '2023/10/28',
+			changes: [
+				{ type: ChangeLogType.Added, text: 'Paid Subscription' },
+				{ type: ChangeLogType.Removed, text: 'Integrate search support' },
+			],
+		},
+		{
+			version: '1.7.1',
+			date: '2023/10/30',
+			changes: [{ type: ChangeLogType.Added, text: 'Improved page open experience' }],
+		},
+		{
+			version: '1.7.2',
+			date: '2023/10/30',
+			changes: [{ type: ChangeLogType.Added, text: 'Solved a technical issue' }],
+		},
+		{
+			version: '1.7.3',
+			date: '2023/11/07',
+			changes: [
+				{ type: ChangeLogType.Changed, text: 'Improved design for Subscription' },
+				{ type: ChangeLogType.Changed, text: 'Performance improvements' },
+			],
+		},
+		{
+			version: '1.7.4',
+			date: '2023/11/13',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Improved experience to show Premium Only. Show Premium features on clicking the premium option',
+				},
+				{ type: ChangeLogType.Changed, text: 'Removed premium features box from the bottom of settings box' },
+			],
+		},
 	],
 	links: [
 		{
