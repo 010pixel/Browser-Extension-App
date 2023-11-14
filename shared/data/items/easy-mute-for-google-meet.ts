@@ -10,6 +10,7 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 	colorBg: indigo[200],
 	logo: 'https://lh3.googleusercontent.com/Flt0qpUDNIvDQtUpdvpgW_XRLy4hqVCKcJ9YdR_ZABimLd4FbGe9-fMRrCPcI5wclKW4306oknbN6I5vopmvMZz4=w128-h128-e365-rj-sc0x00ffffff',
 	banner: '',
+
 	changelog: [
 		{
 			version: '1.0.0',
@@ -17,7 +18,7 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Initial upload',
+					text: 'First release of the extension.',
 				},
 			],
 		},
@@ -27,43 +28,77 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Added,
-					text: 'User settings to show badge as per their preference. Show all, only muted or only unmuted call total on the badge.',
+					text: 'Added settings for badge display preferences, including options to show all calls, only muted calls, or only unmuted calls on the badge.',
 				},
-				{ type: ChangeLogType.Added, text: 'Ability to Mute by default when the call loads' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Introduced default mute setting when joining a call.',
+				},
 			],
 		},
 		{
 			version: '1.2.0',
 			date: '2020/05/21',
-			changes: [{ type: ChangeLogType.Changed, text: 'Updated Icons' }],
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Updated extension icons for a refreshed look.',
+				},
+			],
 		},
 		{
 			version: '1.3.0',
 			date: '2020/05/31',
-			changes: [{ type: ChangeLogType.Added, text: 'Option to Turn Off Camera by default' }],
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Now includes the option to automatically turn off your camera when starting a call.',
+				},
+			],
 		},
 		{
 			version: '1.4.0',
 			date: '2020/06/10',
 			changes: [
-				{ type: ChangeLogType.Added, text: 'Option to toggle Camera or Microphone by pressing Spacebar' },
-				{ type: ChangeLogType.Added, text: 'Support for multiple languages in the options panel' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Enabled quick toggles for camera and microphone using the Spacebar shortcut.',
+				},
+				{
+					type: ChangeLogType.Added,
+					text: 'Added support for multiple languages in the options panel.',
+				},
 			],
 		},
 		{
 			version: '1.4.1',
 			date: '2020/08/27',
-			changes: [{ type: ChangeLogType.Fixed, text: 'Issue of extension not being able to load' }],
+			changes: [
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Resolved the issue of extension loading errors.',
+				},
+			],
 		},
 		{
 			version: '1.5.0',
 			date: '2021/03/21',
-			changes: [{ type: ChangeLogType.Added, text: 'mütesync support. https://mutesync.010pixel.com/' }],
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Now supports mütesync. Learn more at https://mutesync.010pixel.com/.',
+				},
+			],
 		},
 		{
 			version: '1.5.1',
 			date: '2021/04/10',
-			changes: [{ type: ChangeLogType.Fixed, text: 'Issue of number of calls not updating on badge' }],
+			changes: [
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Fixed the issue of the badge not updating the number of calls.',
+				},
+			],
 		},
 		{
 			version: '1.5.2',
@@ -71,7 +106,7 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Fixed,
-					text: 'Issue of extension not being able to load in the newer version of Google Meet',
+					text: 'Fixed compatibility issues with newer versions of Google Meet.',
 				},
 			],
 		},
@@ -81,44 +116,76 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Fixed,
-					text: 'Issue of extension not being able to load in the newer version of Google Meet',
+					text: 'Fixed compatibility issues with newer versions of Google Meet.',
 				},
 			],
 		},
 		{
 			version: '1.6.0',
 			date: '2023/01/11',
-			changes: [{ type: ChangeLogType.Added, text: 'Integrate search support' }],
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Integrated search support for enhanced functionality.',
+				},
+			],
 		},
 		{
 			version: '1.6.1',
 			date: '2023/01/20',
-			changes: [{ type: ChangeLogType.Changed, text: 'Search' }],
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Improved the search feature for a better user experience.',
+				},
+			],
 		},
 		{
 			version: '1.7.0',
 			date: '2023/10/28',
 			changes: [
-				{ type: ChangeLogType.Added, text: 'Paid Subscription' },
-				{ type: ChangeLogType.Removed, text: 'Integrate search support' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Introduced a paid subscription option for premium features.',
+				},
+				{
+					type: ChangeLogType.Removed,
+					text: 'Removed integrated search support to streamline functionality.',
+				},
 			],
 		},
 		{
 			version: '1.7.1',
 			date: '2023/10/30',
-			changes: [{ type: ChangeLogType.Added, text: 'Improved page open experience' }],
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Improved the page opening experience for users.',
+				},
+			],
 		},
 		{
 			version: '1.7.2',
 			date: '2023/10/30',
-			changes: [{ type: ChangeLogType.Added, text: 'Solved a technical issue' }],
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Resolved a technical issue for smoother operation.',
+				},
+			],
 		},
 		{
 			version: '1.7.3',
 			date: '2023/11/07',
 			changes: [
-				{ type: ChangeLogType.Changed, text: 'Improved design for Subscription' },
-				{ type: ChangeLogType.Changed, text: 'Performance improvements' },
+				{
+					type: ChangeLogType.Changed,
+					text: 'Enhanced the design of the subscription feature for a more appealing user interface.',
+				},
+				{
+					type: ChangeLogType.Changed,
+					text: 'Implemented performance improvements for smoother operation.',
+				},
 			],
 		},
 		{
@@ -127,9 +194,12 @@ export const easyMuteForGoogleMeet: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Changed,
-					text: 'Improved experience to show Premium Only. Show Premium features on clicking the premium option',
+					text: 'Improved the experience to show premium features exclusively. Premium options are now easily accessible by clicking the premium option.',
 				},
-				{ type: ChangeLogType.Changed, text: 'Removed premium features box from the bottom of settings box' },
+				{
+					type: ChangeLogType.Changed,
+					text: 'Removed the premium features box from the bottom of the settings panel.',
+				},
 			],
 		},
 	],
