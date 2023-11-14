@@ -17,7 +17,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Initial upload',
+					text: 'Initial release of the extension.',
 				},
 			],
 		},
@@ -27,7 +27,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Optimized code',
+					text: "Optimized the extension's code for better performance.",
 				},
 			],
 		},
@@ -37,7 +37,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Removed bug of script crashing when installing the extension',
+					text: "Fixed a bug that caused the extension's script to crash during installation.",
 				},
 			],
 		},
@@ -47,11 +47,11 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Updated code to improve performance',
+					text: "Updated the extension's code to improve performance.",
 				},
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Updated extension to support latest YouTube layout',
+					text: 'Enhanced compatibility with the latest YouTube layout.',
 				},
 			],
 		},
@@ -61,7 +61,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Initiate extension functionality without refreshing YouTube page after installing extension',
+					text: 'Initiated extension functionality without requiring a refresh of the YouTube page after installation.',
 				},
 			],
 		},
@@ -71,7 +71,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Updated extension to support latest YouTube layout',
+					text: 'Updated the extension to support the latest YouTube layout.',
 				},
 			],
 		},
@@ -81,7 +81,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Further stability tweaks to skip ads',
+					text: 'Implemented further stability tweaks to improve ad skipping ads.',
 				},
 			],
 		},
@@ -91,23 +91,23 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Added,
-					text: 'Close Ad-Banner automatically',
+					text: 'Introduced the automatic closure of Ad-Banners.',
 				},
 				{
 					type: ChangeLogType.Added,
-					text: 'Option to turn On/Off automatic closing of Ad-Banner',
+					text: 'Added an option to enable or disable the automatic closing of Ad-Banners.',
 				},
 				{
 					type: ChangeLogType.Added,
-					text: 'Options for Skip ad e.g. Immediately, After countdown, After 30 seconds, Never',
+					text: 'Added various skip ad options, including immediate, after countdown, after 30 seconds, and never.',
 				},
 				{
 					type: ChangeLogType.Added,
-					text: 'Screenshot for Options page',
+					text: 'Added a screenshot for the Options page.',
 				},
 				{
 					type: ChangeLogType.Added,
-					text: 'Added: Option to Reset Config to Defaults',
+					text: 'Added an option to reset configuration settings to defaults.',
 				},
 			],
 		},
@@ -117,7 +117,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Improved code structure',
+					text: 'Improved the code structure for better performance.',
 				},
 			],
 		},
@@ -127,7 +127,7 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Fixed,
-					text: 'Issue of configuration not loading after browser starts',
+					text: 'Resolved an issue where configuration settings were not loading after the browser starts.',
 				},
 			],
 		},
@@ -137,80 +137,120 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			changes: [
 				{
 					type: ChangeLogType.Unspecified,
-					text: 'Perf: performance improvement',
+					text: 'Made performance improvements for a smoother experience.',
 				},
 			],
 		},
 		{
 			version: '2.2.0',
-			date: '2023/05/14',
+			date: '2023-05-14',
 			changes: [
 				{
 					type: ChangeLogType.Changed,
-					text: 'Updated to Manifest v3',
+					text: 'Updated to Manifest v3.',
 				},
 			],
 		},
 		{
 			version: '2.3.0',
-			date: '2023/07/18',
+			date: '2023-07-18',
 			changes: [
-				{ type: ChangeLogType.Added, text: 'Option to Skip Ad After 60 seconds' },
 				{
 					type: ChangeLogType.Added,
-					text: 'Support for Internationalization support with English, Chinese (China), French, Hindi, Indonesian, Italian, Japanese, Portuguese (Portugal), Spanish, Vietnamese',
+					text: 'Added an option to skip ads after 60 seconds.',
 				},
-				{ type: ChangeLogType.Fixed, text: 'Issue of extension not working with latest Skip Ads button' },
-				{ type: ChangeLogType.Fixed, text: 'Issue of extension manager showing error click of undefined' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Now supports internationalization in multiple languages, including English, Chinese (China), French, Hindi, Indonesian, Italian, Japanese, Portuguese (Portugal), Spanish, and Vietnamese.',
+				},
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Fixed the issue of the extension not working with the latest Skip Ads button.',
+				},
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Resolved the issue of the extension manager showing an error when clicking on undefined elements.',
+				},
 			],
 		},
 		{
 			version: '2.3.1',
-			date: '2023/10/26',
+			date: '2023-10-26',
 			changes: [
-				{ type: ChangeLogType.Added, text: 'Open update only once when the browser is updated for the first time' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Now opens the update page only once when the browser is updated for the first time.',
+				},
 			],
 		},
 		{
 			version: '2.3.2',
-			date: '2023/10/29',
-			changes: [{ type: ChangeLogType.Added, text: 'Improved page open experience' }],
+			date: '2023-10-29',
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Improved the page opening experience for better usability.',
+				},
+			],
 		},
 		{
 			version: '2.4.0',
-			date: '2023/10/30',
-			changes: [{ type: ChangeLogType.Added, text: 'Paid Subscription' }],
+			date: '2023-10-30',
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Introduced a paid subscription option.',
+				},
+			],
 		},
 		{
 			version: '2.4.1',
-			date: '2023/11/03',
+			date: '2023-11-03',
 			changes: [
 				{
 					type: ChangeLogType.Changed,
-					text: 'Better Design Experience, Removed Tabs and showing both Settings and Subscriptions on the same page',
+					text: 'Enhanced the design experience by removing tabs and displaying both Settings and Subscriptions on the same page.',
 				},
-				{ type: ChangeLogType.Added, text: 'Profile Dropdown for logged-in users' },
-				{ type: ChangeLogType.Fixed, text: 'Bug of Settings Form not showing the saved value' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Added a profile dropdown for logged-in users.',
+				},
+				{
+					type: ChangeLogType.Fixed,
+					text: 'Fixed a bug where the Settings Form did not display the saved values correctly.',
+				},
 			],
 		},
 		{
 			version: '2.4.2',
-			date: '2023/11/04',
+			date: '2023-11-04',
 			changes: [
-				{ type: ChangeLogType.Added, text: 'Support for Opt-out from Analytics' },
-				{ type: ChangeLogType.Changed, text: 'Improved design for Subscription' },
-				{ type: ChangeLogType.Changed, text: 'Performance improvements' },
+				{
+					type: ChangeLogType.Added,
+					text: 'Added support for opting out of analytics.',
+				},
+				{
+					type: ChangeLogType.Changed,
+					text: 'Improved the design of the Subscription feature.',
+				},
+				{
+					type: ChangeLogType.Changed,
+					text: 'Made performance improvements for a smoother experience.',
+				},
 			],
 		},
 		{
 			version: '2.4.3',
-			date: '2023/11/13',
+			date: '2023-11-13',
 			changes: [
 				{
 					type: ChangeLogType.Changed,
-					text: 'Improved experience of showing Premium Only. Show Premium features on clicking the premium option',
+					text: 'Enhanced the experience of displaying premium features exclusively. Premium options are now easily accessible by clicking the premium option.',
 				},
-				{ type: ChangeLogType.Changed, text: 'Removed premium features box from the bottom of settings box' },
+				{
+					type: ChangeLogType.Changed,
+					text: 'Removed the premium features box from the bottom of the settings panel.',
+				},
 			],
 		},
 	],
