@@ -253,6 +253,16 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 				},
 			],
 		},
+		{
+			version: '2.4.4',
+			date: '2023-12-13',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: "Made the 'Skip Immediately' feature available for free.",
+				},
+			],
+		},
 	],
 	feedbackForm:
 		'https://docs.google.com/forms/d/e/1FAIpQLSfjOjf0mp41O5FIMdo2gKKEp7yKHoHd_FWYhw5RnoAvjEGvfA/viewform?embedded=true',
