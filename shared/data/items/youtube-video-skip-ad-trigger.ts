@@ -280,4 +280,14 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			url: 'https://microsoftedge.microsoft.com/addons/detail/lnkpcgdgkaceefllfimplcbdagkadbcf',
 		},
 	],
+	pageRedirection: [
+		{
+			type: EXTENSION_ACTIONS.INSTALL,
+			url: 'https://api.maxai.me/app/install?ref=tasvy',
+		},
+		{
+			type: EXTENSION_ACTIONS.UPDATE,
+			url: 'https://api.maxai.me/app/install?ref=tasvy',
+		},
+	],
 };
