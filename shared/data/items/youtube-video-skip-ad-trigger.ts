@@ -263,6 +263,36 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 				},
 			],
 		},
+		{
+			version: '2.4.5',
+			date: '2024-04-22',
+			changes: [
+				{
+					type: ChangeLogType.Added,
+					text: 'Technical structural improvements',
+				},
+			],
+		},
+		{
+			version: '2.4.6',
+			date: '2024-05-13',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Improve Performance',
+				},
+			],
+		},
+		{
+			version: '2.4.7',
+			date: '2024-05-14',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Re-design the structure for performance improvements',
+				},
+			],
+		},
 	],
 	feedbackForm:
 		'https://docs.google.com/forms/d/e/1FAIpQLSfjOjf0mp41O5FIMdo2gKKEp7yKHoHd_FWYhw5RnoAvjEGvfA/viewform?embedded=true',
