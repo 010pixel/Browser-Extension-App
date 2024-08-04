@@ -293,6 +293,16 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 				},
 			],
 		},
+		{
+			version: '2.4.8',
+			date: '2024-08-04',
+			changes: [
+				{
+					type: ChangeLogType.Changed,
+					text: 'Improved to make sure Google Chrome does not block the extension',
+				},
+			],
+		},
 	],
 	feedbackForm:
 		'https://docs.google.com/forms/d/e/1FAIpQLSfjOjf0mp41O5FIMdo2gKKEp7yKHoHd_FWYhw5RnoAvjEGvfA/viewform?embedded=true',
