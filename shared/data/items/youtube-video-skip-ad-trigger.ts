@@ -320,4 +320,6 @@ export const youtubeVideoSkipAdTrigger: BrowserExtension = {
 			url: 'https://microsoftedge.microsoft.com/addons/detail/lnkpcgdgkaceefllfimplcbdagkadbcf',
 		},
 	],
+	notice:
+		'YouTube has been after all the developers who are providing ad-skipping features. They are working with Google Chrome to block All the extensions Skipping YouTube Ads. We are trying our best to keep the extension alive. Please support us with your patience and understanding. We hope you do not give us low rating because of what YouTube is doing. Thank you for your understanding.',
 };

@@ -130,6 +130,11 @@ export const installMsg = (item: BrowserExtension) => (
 			For downloading <strong>{item.name}</strong>
 		</Typography>
 		<Typography variant="h3">😊</Typography>
+		{item.notice && (
+			<Typography variant="h5" marginX={4} marginY={2} fontWeight={600} color="red" padding={2} bgcolor="#fff">
+				{item.notice}
+			</Typography>
+		)}
 	</>
 );
 
@@ -146,6 +151,11 @@ export const updateMsg = (item: BrowserExtension, version: string) => {
 			<Typography variant="h4" fontWeight={600}>
 				{version ? `v${version}` : 'latest version'}
 			</Typography>
+			{item.notice && (
+				<Typography variant="h5" marginX={4} marginY={2} fontWeight={600} color="red" padding={2} bgcolor="#fff">
+					{item.notice}
+				</Typography>
+			)}
 			{changelogData.length > 0 && (
 				<Box
 					sx={{
@@ -171,6 +181,11 @@ export const uninstallMsg = (item: BrowserExtension) => (
 		<Typography variant="h4" fontWeight={400}>
 			So sad 😢 to see you go
 		</Typography>
+		{item.notice && (
+			<Typography variant="h5" marginX={4} marginY={2} fontWeight={600} color="red" padding={2} bgcolor="#fff">
+				{item.notice}
+			</Typography>
+		)}
 		<Typography variant="h3" fontWeight={600} marginY={2}>
 			✨ How can we do better?
 		</Typography>

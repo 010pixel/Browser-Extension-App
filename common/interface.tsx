@@ -45,4 +45,5 @@ export interface BrowserExtension {
 	showOnHome?: boolean;
 	pageRedirection?: PageRedirectionObject[];
 	feedbackForm?: string;
+	notice?: string;
 }
